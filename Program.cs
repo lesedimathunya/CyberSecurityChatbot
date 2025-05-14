@@ -17,43 +17,43 @@ namespace Chatbot
 
         // Dictionary mapping keywords to a list of cybersecurity tips
         static Dictionary<string, List<string>> keywordResponses = new Dictionary<string, List<string>>()
+{
+    { "password", new List<string>
         {
-            { "password", new List<string>
-                {
             "🔐 Use strong passwords like `B3@chSun!2024` instead of weak ones like `123456` or `password`.",
             "🚫 Never reuse passwords across sites. For example, don’t use your email password for your online banking.",
             "🎂 Avoid using names, birthdays, or pet names (e.g., `Tommy1995`). Use password managers to create & store secure ones!"
-                }
-            },
-            { "phishing", new List<string>
-                {
+        }
+    },
+    { "phishing", new List<string>
+        {
             "🎣 A phishing email might say: ‘Your bank account is locked, click here to unlock.’ Never click that link!",
             "📩 Avoid emails with urgent demands like ‘Act now!’ or ‘Confirm your login’ — especially from unknown addresses.",
             "🔍 If unsure, go directly to the website (e.g., type www.yourbank.com) instead of clicking links in suspicious emails."
-                }
-            },
-            { "privacy", new List<string>
-                {
+        }
+    },
+    { "privacy", new List<string>
+        {
             "🔒 Avoid granting apps access to your camera, contacts, or location unless necessary. For example, a calculator app doesn’t need GPS!",
             "👀 On platforms like Facebook or Instagram, set your posts to ‘Friends’ instead of ‘Public’. Only share what you’re comfortable with.",
             "🧹 Regularly clear your browser history and cookies to remove tracking data. Use ‘Incognito Mode’ when researching sensitive topics."
-                }
-            },
-            { "browsing", new List<string>
-                {
+        }
+    },
+    { "browsing", new List<string>
+        {
             "🌐 Use a VPN when on public Wi-Fi (like at a café) to encrypt your activity. Don’t log into your bank on unsecured networks.",
             "🚷 Avoid downloading files or clicking ads from untrusted sites. For example, ‘free movie download’ links often carry malware.",
             "🛡️ Keep Chrome, Firefox, or Edge updated. Enable browser security features like ‘Safe Browsing’ to detect harmful sites."
-                }
-            },
-            { "scam", new List<string>
-                {
+        }
+    },
+    { "scam", new List<string>
+        {
             "⚠️ Common scam: ‘You’ve won a prize! Just send shipping fees.’ 🚩 Never send money to claim a prize you didn’t enter.",
             "🔎 Double-check charity websites during donation drives. Scammers clone real websites — look for misspelled URLs.",
             "📢 If you spot a scam, report it to platforms like Scamwatch, local cybercrime units, or the email provider."
-                }
-            }
-        };
+        }
+    }
+};
 
         static void Main(string[] args)
         {
@@ -92,7 +92,7 @@ How can I assist you today, {userName}?
 
             // Ask the user what topic they're interested in
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine($"\nCyberLily: {userName}, is there a specific area of cybersecurity you're most curious about (e.g., password, phishing, privacy)?");
+            Console.WriteLine($"\nCyberLily: {userName}, is there a specific area of cybersecurity you're most curious about (e.g., password, phishing, privacy,browsing,scam,)?");
             Console.ResetColor();
 
             Console.ForegroundColor = ConsoleColor.Green;
@@ -152,40 +152,40 @@ How can I assist you today, {userName}?
             {
                 if (firstTime)
                 {
-                // CyberLily checks in on user's well-being
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("\nCyberLily: Before we jump in... how are you doing today?");
-                Console.ResetColor();
+                    // CyberLily checks in on user's well-being
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("\nCyberLily: Before we jump in... how are you doing today?");
+                    Console.ResetColor();
 
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.Write("\nYou: ");
-                string moodInput = Console.ReadLine()?.ToLower();
-                Console.ResetColor();
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.Write("\nYou: ");
+                    string moodInput = Console.ReadLine()?.ToLower();
+                    Console.ResetColor();
 
-                // Respond with empathy or positivity
-                if (!string.IsNullOrEmpty(moodInput))
-                {
-                    if (moodInput.Contains("good") || moodInput.Contains("great") || moodInput.Contains("fine") || moodInput.Contains("happy"))
+                    // Respond with empathy or positivity
+                    if (!string.IsNullOrEmpty(moodInput))
                     {
-                        Console.ForegroundColor = ConsoleColor.Red;
+                        if (moodInput.Contains("good") || moodInput.Contains("great") || moodInput.Contains("fine") || moodInput.Contains("happy"))
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine("\nCyberLily 🤖:  I'm feeling electric ⚡ and ready to help!  . 😊");
-                        Console.WriteLine("\nCyberLily 🤖: That’s awesome to hear! 😊 A good mood makes everything better — even cybersecurity!");
-                        Console.ResetColor();
-                    }
-                    else if (moodInput.Contains("bad") || moodInput.Contains("not great") || moodInput.Contains("tired") || moodInput.Contains("sad"))
-                    {
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("\nCyberLily 🤖: I’m sorry you’re feeling that way. Remember, I’m here to help and keep things simple 💡.");
-                        Console.ResetColor();
-                    }
-                    else
-                    {
-                        Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("\nCyberLily 🤖: That’s awesome to hear! 😊 A good mood makes everything better — even cybersecurity!");
+                            Console.ResetColor();
+                        }
+                        else if (moodInput.Contains("bad") || moodInput.Contains("not great") || moodInput.Contains("tired") || moodInput.Contains("sad"))
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("\nCyberLily 🤖: I’m sorry you’re feeling that way. Remember, I’m here to help and keep things simple 💡.");
+                            Console.ResetColor();
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine("\nCyberLily 🤖:  I'm feeling electric ⚡ and ready to help!  . 😊");
-                        Console.WriteLine("\nCyberLily 🤖: Thanks for sharing! Let’s make today a little better together. 😊");
-                        Console.ResetColor();
+                            Console.WriteLine("\nCyberLily 🤖: Thanks for sharing! Let’s make today a little better together. 😊");
+                            Console.ResetColor();
+                        }
                     }
-                }
 
                     firstTime = false; // Ensure mood is asked only once
                 }
@@ -303,7 +303,7 @@ How can I assist you today, {userName}?
                 if (!string.IsNullOrEmpty(userInterest))
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine($"\nCyberLily: As someone interested in {userInterest}, here's a reminder to regularly review related safety practices.");
+                    Console.WriteLine($"\nCyberLily:As someone interested in  {userInterest} cybersecurity, here's a reminder to regularly review related safety practices..");
                     Console.ResetColor();
                 }
 
@@ -326,7 +326,7 @@ How can I assist you today, {userName}?
                     else if (continueInput == "no")
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("\nCyberLily 🤖: It was awesome chatting with you, {userName}! Stay sharp and stay safe. 🧠🔐");
+                        Console.WriteLine("\nCyberLily 🤖: It was awesome chatting with you, ! Stay sharp and stay safe. 🧠🔐");
                         Console.WriteLine("Remember: A day without cybersecurity is like a day without sunshine. ☀️");
                         Console.ResetColor();
                         return;// Exit program
